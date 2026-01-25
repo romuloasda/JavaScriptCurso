@@ -1,5 +1,5 @@
 let num1 = 1
-let num2 = 2
+let num2 = 3
 
 num1++
 num2--
