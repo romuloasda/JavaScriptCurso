@@ -3,3 +3,5 @@ function hollobranch() {
 }
 
 hollobranch()
+
+console.log('Hollobranch')
