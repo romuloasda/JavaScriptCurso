@@ -13,5 +13,3 @@ console.log(getPreco.apply(produto))
 console.log(getPreco.call(produto, 0.1, 'R$'))
 console.log(getPreco.apply(produto, [0.1, 'R$']))
 
-global.preco = 2000
-globa
