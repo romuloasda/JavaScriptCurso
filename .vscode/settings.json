@@ -1,5 +1,7 @@
 {
     "code-runner.clearPreviousOutput": true,
     "code-runner.runInTerminal": false,
-    "code-runner.saveAllFilesBeforeRun": true
+    "code-runner.saveAllFilesBeforeRun": true,
+    "typescript.suggest.enabled": false,
+    "javascript.suggest.enabled": false
 }
