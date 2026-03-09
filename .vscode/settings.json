@@ -1,7 +1,16 @@
 {
     "code-runner.clearPreviousOutput": true,
+    
     "code-runner.runInTerminal": false,
     "code-runner.saveAllFilesBeforeRun": true,
     "typescript.suggest.enabled": false,
-    "javascript.suggest.enabled": false
+    "javascript.suggest.enabled": false,
+    "json.schemas": [
+    
+    ],
+    "editor.quickSuggestions": {
+        "other": "off",
+        "comments": "off",
+        "strings": "off"
+    }
 }
