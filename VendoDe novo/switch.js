@@ -157,10 +157,12 @@ const estacaoDoAno = function (mes) {
             break;
         case "Março": case "Abril": case "Maio":
             estacao = 'Outuno'
+            break;
         default:
             console.log('MES INVALIDO !!!!!!!')
+            return;
     }
     console.log(`O mes escholido foi ${mes} e a estação é ${estacao}`)
 }
 
-estacaoDoAno('Dezembro')
+estacaoDoAno('sdsds')

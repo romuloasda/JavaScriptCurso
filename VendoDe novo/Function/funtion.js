@@ -167,4 +167,12 @@ somar(13, 13)
 
 const dizerOla = () => 'Olá, DEv'
 
-dizerOla()
+let oi = dizerOla()
+
+console.log(oi)
+
+dizerOi = () => 'Ola, dev'
+
+let di = dizerOi()
+
+console.log(di)

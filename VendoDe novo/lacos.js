@@ -237,3 +237,38 @@ const cameras = {camera:['Camera sul', 'Camera Norte', 'Camera Leste']}
 for(let cam of cameras.camera) {
     console.log('Monitorando ' + cam)
 }
+
+let contador = 1
+while (contador <= 10) {
+    console.log('Contandor = ' + contador)
+    contador++
+}
+
+for (let cont = 1; cont <=10; cont++) {
+    console.log(cont)
+}
+
+const cameras = {camera:['Camera sul', 'Camera Norte', 'Camera Leste']}
+
+for(let i = 0; i < cameras.camera.length; i++) {
+    console.log(cameras.camera[i])
+}
+
+for (let t = 0; t <= 10; t++) {
+    let n = 9
+    console.log(`A tabuada de ${n} é ${t} = ${n * t} `)
+}
+
+const guardas = ['Romulo', 'Silva', 'Souza']
+
+for (let nom = 0; nom < guardas.length; nom++) {
+    console.log(`O GCM ${guardas[nom]} esta presente .`)
+}
+let resultado;
+for (let som = 0; som < 6; som++) {
+    let res = som + som
+    let resultado = som + res
+    console.log(`O numero ${som}`)   
+}
+
+console.log(resultado)
