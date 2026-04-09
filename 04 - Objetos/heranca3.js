@@ -17,5 +17,4 @@ console.log(Object.entries(filho))
 
 for (let key in filha2) {
     filha2.hasOwnProperty(key) ? console.log(key) : console.log(`Fora: ${key}`)
-    consol
 }

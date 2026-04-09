@@ -23,3 +23,7 @@ const aula4 = novo(aula, 'Até breve', 456)
 
 console.log(aula3)
 console.log(aula4)
+
+Viatura.prototype.patrulhar = function() { 
+	console.log(this.prefixo + " em QAP!"); 
+}

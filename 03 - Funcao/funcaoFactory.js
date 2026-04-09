@@ -67,3 +67,4 @@ function criarRonda() {
 const rodou = criarRonda();
 rodou.patrulhar(1);
 rodou.patrulhar(1);
+

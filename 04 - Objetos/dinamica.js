@@ -21,13 +21,7 @@ const carro = {
         idade: 25
     }
 }
-carro.
-    carro.ano = 2022
-
-console.log(carro)
-
-//pode-se deletar propriedades de um objeto
-delete carro.ano
+carro.ano = 2022
 
 console.log(carro)
 
