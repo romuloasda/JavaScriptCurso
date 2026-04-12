@@ -1,4 +1,7 @@
 const pilotos = ['Vettel', 'Alonso', 'Massa', 'Raikkonen']
+pilotos.pop() //remove o ultimo elemento do array
+console.log(pilotos)
+
 pilotos.shift() //remove o primeiro elemento do array
 console.log(pilotos)
 
@@ -8,8 +11,6 @@ console.log(pilotos)
 pilotos.push('Romulo') //adiciona o ultimo elemento do array
 console.log(pilotos)
 
-pilotos.pop() //remove o ultimo elemento do array
-console.log(pilotos)
 
 pilotos.splice(1, 1) //adiciona e remove elementos do array
 console.log(pilotos)
