@@ -5,9 +5,12 @@ const alunos = [
     { nome: "Daniel", nota: 7.6, bolsista: true }
 ]
 
+// Todos os alunos são bolsistas
 const todosBolsistas = (resultado, bolsista) => resultado && bolsista
 console.log(alunos.map(a => a.bolsista).reduce(todosBolsistas))
 
+
+// Algum aluno é bolsista?
 const algumBolsista = (resultado, bolsista) => resultado || bolsista
 console.log(alunos.map(a => a.bolsista).reduce(algumBolsista))
 
