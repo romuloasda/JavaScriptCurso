@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>Formulários</title>
+    </head>
+    <bory>
+        <h2>Formulários</h2>
+        <form action="exercicios.html" method="get">
+            <div>
+                <div><label for="nome">Nome:</label></div>
+                <input
+                    type="text"
+                    id="nome"
+                    value="João"
+                    placeholder="Digite seu nome"
+                    required
+                />
+            </div>
+            <div>
+                <div><label for="email">Email: </label></div>
+                <input
+                    type="email"
+                    id="email"
+                    value="joa@gmail.com"
+                    placeholder="Digite seu email"
+                    required
+                />
+            </div>
+            <div>
+                <div><label for="Senha">Senha:</label></div>
+                <input
+                    type="password"
+                    id="Senha"
+                    value="1pço@56"
+                    placeholder="Digite sua senha"
+                    required
+                />
+            </div>
+            <div>
+                <div><label for="mensagem">Mensagem:</label></div>
+                <textarea
+                    name="mensagem"
+                    id="mensagem"
+                    placeholder="Digite sua mensagem"
+                    cols="30"
+                    rows="10"
+                ></textarea>
+            </div>
+                <div>Selecione seu gênero:</div>
+                <input type="radio" name="genero" id="masculino" value="masculino"/>
+				<label for="genero">Maculino</label>
+                <input type="radio" name="genero" id="feminino" value="feminino"/>
+				<label for="masculino">Feminino</label>
+                <input type="radio" name="genero" id="outro" value="outro" />
+				<label for="genero">Outro</label>
+            </div>
+			<div>
+				<div><label for="plano">Selecione seu plano:</label></div>
+				<select name="plano" id="plano">
+					<opotion value="Plano">Selecione um plano</option>
+					<option value="basico">Plano Básico - R$ 40</option>
+					<option value="premium">Plano Premium - R$ 80</option>
+					<option value="gold">Plano Ouro - R$ 120</option>
+				</select>
+			</div>
+			<div>
+				<div><label for="aceitar">Aceito os termos e condições:</label></div>
+				<input type="checkbox" name="aceitar" id="aceitar" value="aceito"/>
+			</div>
+            <div>
+				<div>
+                <button type="submit">Salvar</button>
+                <button type="reset">Limpar</button>
+				</div>
+            </div>
+        </form>
+    </bory>
+</html>
+

@@ -1,0 +1,28 @@
+br - quebra linha
+h1 - Header
+ul - 
+	li - listas nao ordenadas tem as bolinhas
+ol - 
+	li - listas ordenadas tem os numeros
+<a href="https://www.google.com">Google</a> - link 
+<img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo" /> - imagem
+Se eu colocar ./ significa que o arquivo esta na mesma pasta do index.html
+Se eu colocar ../ significa que o arquivo esta na pasta pai do index.html
+Target="_blank" - para abrir o link em uma nova aba
+
+/* dnfnksdfkjdskljflksdjfkjsdlkfjsldkjflksdjfsjdfk */
+
+p paragrafos
+b negrito
+i italico
+sub subscrito
+sup sobrescrito
+hr coloca uma linha horizontal entre os elementos ou seja tag anterior e posterior
+strong pode ou nao ser negrito
+em enfase no texto
+blockquote citação / cite link para a fonte da citação
+footer rodape
+header cabecalho
+q adiciona aspas a um texto
+del texto riscado
+ins texto sublinhado

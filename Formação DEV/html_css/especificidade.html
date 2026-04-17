@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>Especificidade CSS</title>
+		<style>
+			bory {
+				background-color: black;
+				color: white;
+			}
+
+			.caixa {
+				width: 100px;
+				height: 100px;
+				background-color: tomato!important;
+			}
+
+			div.azul {
+				background-color: rgb(93, 93, 148);
+			}
+
+			#unico {
+				background-color: linear-gradient(to right, red, yellow);
+			}
+
+			.advertencia {
+				background-color: rgba(241, 226, 11, 0.541);
+				padding: 5px;
+				
+			}
+
+			.importante {
+				background-color: rgb(241, 11, 11);
+				padding: 5px;
+				color: white;
+				font-weight: bold;
+				text-align: center;
+				border-radius: 5px;
+				margin-top: 10px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<h2>1) Regra com !important</h2>
+		<div class="caixa azul">Cuidado com o !important</div>
+		
+		<h2>2) Seletor mais especifico</h2>
+		<div id="unico" class="advertencia">Quem vai ganhar</div>
+		
+		<h2>3) Ultima regra aplicada (EMPATE)</h2>
+		<div class="advertencia importante">Este é o último estilo aplicado</div>
+	</body>
+</html>

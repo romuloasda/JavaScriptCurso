@@ -1,0 +1,76 @@
+<html>
+	<head>
+		<title>Seletores #01</title>
+		<style>
+			body {
+				background-color: black;
+				color: white;
+			}
+
+			section, span, p {
+				display: inline-block;
+				height: 50px;
+				width: 50px;
+				margin: 5px;
+				background-color: dodgerblue;
+				font-size: 20px;
+				text-align: center;
+			}
+			.circulo {
+				display: inline-block;
+				height: 50px;
+				width: 50px;
+				margin: 5px;
+				background-color: tomato;
+				border-radius: 50%;
+				font-size: 40px;
+				text-align: center;
+				line-height: 50px;
+			}
+			.destaque {
+				border: 2px solid yellow;
+				color: yellow;
+				border-radius: 25px;
+			}
+			#meu-bt {
+				height: 30px;
+				width: 120px;
+				background-color: green;
+				border: solid 1px white;
+				color: white;
+				border-radius: 15px;
+				text-transform: uppercase;
+			}
+
+			[href], [deveSumir] {
+				display: none;
+			}
+
+			* {
+				border: solid 1px greenyellow;
+				margin: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Seleção de Elementos</h2>
+		<section>1</section>
+		<span>2</span>
+		<p>3</p>
+
+		<h2>Outro Título</h2>
+		<div class="circulo">4</div>
+		<div class="circulo destaque">5</div>
+
+		<h2>Seletores de ID</h2>
+		<button id="meu-bt">Clique aqui</button>
+
+		<h2>Seletores de Atributo</h2>
+		<a href="www.google.com.br">Google</a>
+		<div deveSumir>Esconder #1</div>
+		<main deveSumir>Esconder #2</main>
+
+		<h2>Seletor universal</h2>
+		<label>Todos os parágrafos serão afetados</label>
+	</body>
+</html>
