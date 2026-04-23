@@ -42,3 +42,77 @@ console.log(gera)
 
 
 
+// Chamar função sem parametro
+
+function exiCOn() {
+	return `FUNCIONOU!!!!`
+}
+
+function excMen(callback) {
+	console.log(`Estou recebendo ${callback}`)
+}
+
+excMen(exiCOn())
+
+function dobrar(numero) {
+	return numero * 2
+}
+
+// Chamar funcação detro da outra com parametro
+
+function processar(valor, ajudante) {
+	console.log(`O resultado ${ajudante(valor)}`)
+}
+
+processar(5, dobrar)
+
+function emGrito(texto) {
+	return texto.toUpperCase();
+}
+
+function formatar(string, callback) {
+	return callback(string);
+}
+
+console.log(formatar("Java Script", emGrito))
+
+function metade(n) {
+	return n / 2
+}
+
+function exibir(num, acao) {
+	console.log(`A metade É ${acao(num)} `)
+}
+
+exibir(10, metade)
+
+function caixaAlta(texto) {
+	return texto.toUpperCase()
+}
+
+function caixaBaixa(texto) {
+	return texto.toLowerCase()
+}
+
+function anunciar(texto, transformador) {
+	console.log(`${transformador(texto)}`)
+}
+
+anunciar("o java script é legal", caixaAlta)
+
+anunciar("O JAVA SCRIPT É LEGAL", caixaBaixa)
+
+const triplicar = n => {
+	return n * 3
+}
+
+const elevarAoQuadrado = n => {
+	return n * n
+}
+
+const processarNumero = (num, operacao) => {
+	console.log(`${operacao(num)}`)
+}
+
+processarNumero(9, triplicar)
+processarNumero(9, elevarAoQuadrado)

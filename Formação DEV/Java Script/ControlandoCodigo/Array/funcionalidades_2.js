@@ -12,3 +12,9 @@ console.log(numeros)
 
 numeros.push(5)
 console.log(numeros)
+
+numeros.reverse()
+console.log(numeros)
+
+numeros.reverse()
+console.log(numeros)
