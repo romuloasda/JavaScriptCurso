@@ -32,7 +32,7 @@ const frm2 = document.querySelector('#fnum')
 const aleatorio = document.querySelector('h5')
 
 frm2.addEventListener('submit', (e) => {
-	const randon = Number(Math.random(frm2.inNum.value) * 100).toFixed()
+	const randon = Number(Math.random(frm2.inNum.value) * 10000).toFixed()
 
 	aleatorio.textContent = `GERANDO ......... ${randon}`
 
