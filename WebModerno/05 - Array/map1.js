@@ -1,7 +1,7 @@
 const nums = [1, 2, 3, 4, 5, 6]
 
-const nums2 = nums.map(function (num) {
-    return num * 2
+const nums2 = nums.map((num) => {
+	return num * 2
 })
 
 console.log(nums2)
