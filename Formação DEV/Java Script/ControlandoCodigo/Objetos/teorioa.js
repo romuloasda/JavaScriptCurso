@@ -68,7 +68,7 @@ function criarData(dia, mes, ano) {
 	}
 }
 
-const datahoje = criarData(22, 04, 2026)
+const datahoje = criarData(22, 4, 2026)
 console.log(datahoje.formatar())
 
 // Classe!
@@ -89,6 +89,6 @@ function Data(dia, mes, ano) {
 	}
 }
 
-const data1 = new Data(22, 04, 2025)
+const data1 = new Data(22, 12, 2025)
 data1.ano = 2026
 console.log(data1.formatar())
