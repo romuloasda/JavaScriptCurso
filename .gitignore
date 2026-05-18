@@ -1,0 +1,14 @@
+node_modules/
+package-lock.json
+
+# IDE
+.vs/
+.vscode/
+*.vsidx
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
