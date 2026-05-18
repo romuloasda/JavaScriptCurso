@@ -1,1 +1,0 @@
-console.log((10.345).toFixed(2))
