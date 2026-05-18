@@ -4,6 +4,8 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-wrap: wrap;
+	align-content: center;
 	color: white;
 	background-color: #333;
 	font-family: 'Noto Sans', sans-serif;
@@ -22,3 +24,9 @@ body {
 #exercicio > div:nth-child(3) {background-color: #D800A6;}
 #exercicio > div:nth-child(4) {background-color: #319da0;}
 #exercicio > div:nth-child(5) {background-color: #367e18;}
+
+#exercicios > div.destaque {
+	color: #f6cc42;
+	border: 8px solid #f6cc42;
+	font-weight: 900;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../CSS/estilo.css">
+	</head>
+	<body id="exercicio">
+		<div id="primeiro">#primeiro</div>
+		<div id="segundo" class="destaque">#segundo</div>
+		<div id="terceiro">#terceiro</div>	
+		<div id="quarto" class="destaque">#quarto</div>	
+		<div id="quinto" class="ultimo">#quinto</div>	
+
+		<script>
+			//HTMLCollection (não é um array)
+			const destaque = document.getElementsByClassName('destaque')
+			destaque[1].classList.remove('ultimo')
+
+			
+			
+			const ultimo = document.getElementsByClassName('ultimo')
+			ultimo[0].classList.add('destaque')
+		</script>
+	</body>
+</html>
