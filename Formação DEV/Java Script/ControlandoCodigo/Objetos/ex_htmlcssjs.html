@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Script</title>
+    <style>
+        /* Um estilo simples para centralizar as coisas na tela */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s; /* Deixa a mudança de cor suave */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Aqui está o nosso HTML (o esqueleto) -->
+    <h1 id="titulo">Olá! Clique no botão abaixo.</h1>
+    <button id="meuBotao">Clique Aqui</button>
+
+    <!-- Aqui começa o nosso JavaScript (o cérebro) -->
+    <script>
+        // 1. Pegamos os elementos do HTML que queremos controlar
+        const botao = document.getElementById("meuBotao");
+        const titulo = document.getElementById("titulo");
+
+        // 2. Criamos uma função que diz o que vai acontecer
+        function transformarPagina() {
+            // Muda o texto do título
+            titulo.innerText = "O JavaScript funcionou! 🎉";
+            
+            // Muda a cor de fundo da página para um tom verde claro
+            document.body.style.backgroundColor = "#d4edda";
+            
+            // Desabilita o botão para o usuário ver que a ação acabou
+            botao.innerText = "Feito!";
+            botao.disabled = true;
+        }
+
+        // 3. Avisamos ao botão para "escutar" o clique do usuário e rodar a função
+        botao.addEventListener("click", transformarPagina);
+    </script>
+
+</body>
+</html>
+
+
+<!-- O próximo desafio prático
+A melhor forma de fixar isso é parando de fazer exercícios soltos e criando pequenos projetos completos. Tente construir um destes três:
+
+Uma Lista de Tarefas (To-Do List): Onde o usuário adiciona tarefas, marca como concluídas, deleta, e os dados continuam lá mesmo se ele atualizar a página (usando localStorage).
+
+Um app de Clima: Um site simples que usa o fetch para conectar em uma API de clima gratuita, onde o usuário digita a cidade e você mostra a temperatura atual em tempo real.
+
+Um buscador de GIFs ou Filmes: Usando a API do Giphy ou do TMDB. -->

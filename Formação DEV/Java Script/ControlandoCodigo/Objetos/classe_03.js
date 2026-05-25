@@ -6,11 +6,11 @@ class Data {
 
 	//Getters/ Setter
 
-	obterDia() {
+	get dia() {
 		return this.#dia
 	}
 
-	alterarDia(novoDia) {
+	set dia(novoDia) {
 		if (novoDia >= 1 && novoDia <= 31) {
 			this.#dia = novoDia
 		}
@@ -23,5 +23,5 @@ class Data {
 
 const d1 = new Data()
 
-d1.alterarDia(1)
+d1.dia = 12
 console.log(d1.exibir(), d1)

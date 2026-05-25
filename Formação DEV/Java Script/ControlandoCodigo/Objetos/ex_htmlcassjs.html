@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha To-Do List</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            background: #fdfdfd;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+        .concluida {
+            text-decoration: line-through;
+            color: #888;
+            background: #f1f1f1;
+        }
+        .btn-deletar {
+            background-color: #dc3545;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Minhas Tarefas</h2>
+        
+        <div class="input-group">
+            <input type="text" id="inputTarefa" placeholder="O que precisa fazer?">
+            <button id="btnAdicionar">Adicionar</button>
+        </div>
+
+        <ul id="listaTarefas">
+            <!-- As tarefas do JavaScript vão aparecer aqui dentro -->
+        </ul>
+    </div>
+<!-- 1. Importando a biblioteca SweetAlert2 atualizada (Substitua as suas duas linhas de script por esta) -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        // Elementos do HTML
+        const inputTarefa = document.getElementById('inputTarefa');
+        const btnAdicionar = document.getElementById('btnAdicionar');
+        const listaTarefas = document.getElementById('listaTarefas');
+
+        let tarefas = JSON.parse(localStorage.getItem('minhas_tarefas')) || [];
+
+        function renderizarTarefas() {
+            listaTarefas.innerHTML = '';
+            tarefas.forEach((tarefa, index) => {
+                const li = document.createElement('li');
+                if (tarefa.concluida) {
+                    li.classList.add('concluida');
+                }
+                li.innerHTML = `
+                    <span onclick="alternarConclusao(${index})" style="cursor:pointer;">${tarefa.texto}</span>
+                    <button class="btn-deletar" onclick="deletarTarefa(${index})">X</button>
+                `;
+                listaTarefas.appendChild(li);
+            });
+            salvarNoLocalStorage();
+        }
+
+        // 2. AQUI ESTÁ A MUDANÇA: Substituímos o alert() nativo pelo Swal.fire()
+        function adicionarTarefa() {
+            const texto = inputTarefa.value.trim();
+            
+            if (texto === '') {
+                // Nova janela animada e moderna do SweetAlert2
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Campo vazio!',
+                    text: 'Por favor, digite alguma tarefa primeiro.',
+
+					background: '#ffff',
+                    confirmButtonColor: '#28a745', // Deixa o botão verde combinando com seu app
+                    confirmButtonText: 'Entendido'
+                });
+                return;
+            }
+
+            const novaTarefa = {
+                texto: texto,
+                concluida: false
+            };
+
+            tarefas.push(novaTarefa);
+            inputTarefa.value = '';
+            renderizarTarefas();
+        }
+
+        function alternarConclusao(index) {
+            tarefas[index].concluida = !tarefas[index].concluida;
+            renderizarTarefas();
+        }
+
+        function deletarTarefa(index) {
+            tarefas.splice(index, 1);
+            renderizarTarefas();
+        }
+
+        function salvarNoLocalStorage() {
+            localStorage.setItem('minhas_tarefas', JSON.stringify(tarefas));
+        }
+
+        btnAdicionar.addEventListener('click', adicionarTarefa);
+        inputTarefa.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') adicionarTarefa();
+        });
+
+        renderizarTarefas();
+    </script>
+</body>
+</html>
