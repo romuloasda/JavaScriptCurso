@@ -23,16 +23,43 @@
         <p id="texto-boas-vindas">O texto original está aqui. Clique no botão para mudar!</p>
         <button id="btn-mudar-texto">Mudar Texto</button>
         <button id="btn-resetar-texto">Resetar</button>
-    </section>>
+    </section>
 
 	<section>
         <h2>02. Contador Dinâmico</h2>
         <p>Valor Atual: <strong id="valor-contador" style="font-size: 20px;">0</strong></p>
         <button id="btn-subtrair">- Diminuir</button>
         <button id="btn-somar">+ Somar</button>
+
     </section>
 
-	<section id="meu-formulario"></section>
+	<section>
+		<h2>03. Capturando Dados de Inputs</h2>
+		<form id="meu-formulario">
+			<label for="campo-nome">Nome:</label>
+			<input type="text" id="campo-nome" placeholder="Digite seu nome aqui" required>
+
+			<br><br>
+
+			<label for="campo-cor"> Escolha uma cor de fundo para pagina:</label>
+			<input type="color" id="campo-cor" value="#f4f4f9">
+
+			<br><br>
+			<button type="submit">Aplicar Alterações</button>
+		</form>
+		<p id="mensagem-resultado" style="margin-top: 15px; font-weight: bold; color: blue"></p>
+	</section>
+
+	<section>
+		<h2>04. Lista de Tarefas Dinâmica (Criar e Deletar)</h2>
+		<input type="text" name="" id="nova-tarefa" placeholder="Nova tarefa...">
+		<button id="btn-add-tarefa">Adicionar</button>
+
+		<ul id="lista-tarefas">
+			<li>Tarefa de exemplo fixo no HTML (Clique em mim para marcar como concluída)</li>
+		</ul>
+	</section>
 	
+	<script src="./js/projeto1.js"></script>
 </body>
 </html>
