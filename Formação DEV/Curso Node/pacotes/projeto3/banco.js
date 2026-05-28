@@ -1,0 +1,42 @@
+import fs from 'fs'
+let dadosManipulaveis = _carregarValores()
+let ultimoIdRegistrado = dadosManipulaveis[dadosManipulaveis.length - 1]?.id ?? -1//Formato {nome, id}
+
+let idGlobal = ultimoIdRegistrado + 1
+
+
+function _carregarValores() {
+	const dadosEmJSON = fs.readFileSync('banco.json', "utf-8")
+	const dados = JSON.parse(dadosEmJSON)
+	return dados
+}
+
+export function persistirValores() {
+	const dadosJSON = JSON.stringify(dadosManipulaveis, null, 4)
+	fs.writeFileSync("banco.json", dadosJSON, "utf-8")
+}
+
+export function salvar(nome, id) {
+	const indice = dadosManipulaveis.findIndex((obj) => obj.id === id)
+	if (indice >= 0) {
+		dadosManipulaveis[indice].nome = nome
+	} else {
+		dadosManipulaveis.push({ nome, id: idGlobal })
+		idGlobal++
+	}
+}
+
+export function deletar(id) {
+
+	const dadosFiltrados = dadosManipulaveis.filter((dado) => {
+		return dado.id != id
+	})
+	dadosManipulaveis = dadosFiltrados
+}
+
+export function pegarDados() {
+	const dadosImprimiveis = dadosManipulaveis.map((dado) => {
+		return `${dado.nome} -> ${dado.id}`
+	})
+	return dadosImprimiveis
+}

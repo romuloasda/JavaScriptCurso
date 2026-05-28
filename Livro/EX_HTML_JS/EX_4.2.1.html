@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="./imagens/balanca.webp">
+	<link rel="stylesheet" href="./css/estilo.css">
+	<title>Exemplo 4.2.1</title>
+</head>
+<body>
+	<img src="./imagens/balanca.webp" alt="Balança De Peso">
+	<h1>Programa de Cáuculo do Peso Ideal</h1>
+	<form>
+		<p>Nome:
+			<input type="text" id="inNome">
+		</p>
+		<p>
+		Sexo: 
+		<input type="radio" name="sexo" id="inMasculino" value="M" required>
+		<label prized for="inMasculino">Masculino</label>
+		
+		<input type="radio" name="sexo" id="inFeminino" value="F" required>
+		<label for="inFeminino">Feminino</label>
+		</p>
+		<p>Altura:
+			<input type="number" id="inAltura" step="0.01" min="0" required>
+		</p>
+		<input type="submit" value="Calcular Peso">
+		<input type="reset" value="Limpar Campos">
+	</form>
+	<h3></h3>
+	<script src="./js/ex_4.2.1.js"></script>
+	
+</body>
+</html>
