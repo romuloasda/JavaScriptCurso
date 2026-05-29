@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercicios com Condicionais</title>
+</head>
+<body>
+	<div>
+		<h1>Programa Par OU Impar</h1>
+		<form id="formulario1">
+			<p>Numero:
+				<label><input type="number" id="inNumero" step="0.50" min="0" placeholder="Par Ou Impar"></label>
+			</p>
+			<input type="submit" value="Varificar">
+			<button type="reset" id="btnResetNativo">Redefinir via JS</button>
+			<!-- <input type="reset" id="redefinir" onclick="limparFormulario"> -->
+		</form>
+		<br>
+		<p id="resposta1"></p>
+		<br>
+	</div>
+	<div>
+		<h1>Programa Verificar Velocidade</h1>
+		<form id="formulario2">
+			<p>Valocidade Permitida
+				<input type="number" id="inVp" min="1" >
+			</p>
+			<p>Velocidade do condutor
+				<input type="number" id="inVc" min="1">
+			</p>
+			<input type="submit" value="Verificar Velocidade">
+			<button type="reset" id="btnResetVelo">REDEFINIR</button>
+		</form>
+		<br>
+		<p id="resposta2"></p>
+		<br>
+	</div>
+	<div>
+		<h1>Programa Parquímetro</h1>
+		<form id="formulario3">
+			<p>Valor R$: 
+				<input type="number" id="inParquimetro" min="0" step="0.01">
+			</p>
+			<input type="submit" value="Confirmar Deposito">
+			<button type="reset" id="btnResetPaq">REDEFINIR</button>
+		</form>
+		<br>
+		<p id="resposta3"></p>
+		<br>
+	</div>
+
+	<h2></h2>
+	<h3></h3>
+
+	<script src="./js/ex_4.6.1.js"></script>
+
+	
+</body>
+</html>
