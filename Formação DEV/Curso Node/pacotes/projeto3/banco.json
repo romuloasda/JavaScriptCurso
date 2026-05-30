@@ -1,9 +1,5 @@
 [
     {
-        "nome": "text",
-        "id": 0
-    },
-    {
         "nome": "Pedro",
         "id": 1
     },
@@ -32,11 +28,11 @@
         "id": 7
     },
     {
-        "nome": "mario",
-        "id": 8
+        "nome": "Mario",
+        "id": 11
     },
     {
-        "nome": "mario",
-        "id": 9
+        "nome": "ana",
+        "id": "1506fd62-bc2e-4c78-9183-46b82e36488a"
     }
 ]

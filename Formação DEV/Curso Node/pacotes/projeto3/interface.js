@@ -12,6 +12,17 @@ export async function menu(itens) {
 	return opcaoSelecionada.selectedText
 }
 
+export async function menuSelecaoUsuario(itens) {
+	let options = {
+		style: term.inverse,
+		selectedStyle: term.white.bgGray
+	}
+
+	const selecionada = await term.singleColumnMenu(itens, options).promise
+	const id = selecionada.selectedText.split("->")[1].trim()
+	return id
+}
+
 export function finaliza() {
 	process.exit()
 }

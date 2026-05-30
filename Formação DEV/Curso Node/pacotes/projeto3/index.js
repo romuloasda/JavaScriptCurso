@@ -1,5 +1,5 @@
 import { salvar, deletar, pegarDados, persistirValores } from "./banco.js"
-import { menu, finaliza, le, textoVerde, textoAzul } from './interface.js'
+import { menu, finaliza, le, textoVerde, textoAzul, menuSelecaoUsuario } from './interface.js'
 
 const itensMenu = [" Adicionar ", " Editar", " Deletar ", " Ver Todos",
 	" Persistir ", " sair "
@@ -9,21 +9,21 @@ let nome, id;
 
 while (1) {
 	const selecionado = await menu(itensMenu)
-	switch (selecionado.trim().toLocaleLowerCase()) {
+	switch (selecionado.trim().toLowerCase()) {
 		case 'adicionar':
 			nome = await le("Digite o nome do usuario")
 			salvar(nome);
 			textoVerde("Feito!")
 			break;
 		case 'editar':
-			nome = await le("ID para editar")
-			nome = await le("Nome atualizado: ")
-			salvar(nome, +id)
+			id = await menuSelecaoUsuario(pegarDados())
+			nome = await le("Digite o novo nome atualizado: ")
+			salvar(nome, id)
 			textoVerde("Feito")
 			break;
 		case 'deletar':
-			nome = await le("ID para excluir")
-			deletar(+id)
+			id = await menuSelecaoUsuario(pegarDados())
+			deletar(id)
 			textoAzul("Feito")
 			break;
 		case 'ver todos':
@@ -38,7 +38,7 @@ while (1) {
 			finaliza()
 			textoVerde('Até mais')
 		default:
-			console.log(`${selecionado.trim().toLocaleLowerCase()} não é valido`)
+			console.log(`${selecionado.trim().toLowerCase()} não é valido`)
 	}
 
 }
