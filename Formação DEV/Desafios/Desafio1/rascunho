@@ -1,0 +1,10 @@
+function decimalParaOutras(numero) {
+	const decimal = parseInt(numero, 10);
+	return {
+		binario: decimal.toString(2),
+		hexadecimal: decimal.toString(16).toUpperCase()
+	};
+}
+
+console.log(decimalParaOutras(42).binario);
+// Retorna: { binario: "101010", hexadecimal: "2A" }
