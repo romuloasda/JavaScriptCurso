@@ -8,9 +8,7 @@ class dono {
 		return `Olá ${this._nome}, sua idade é ${this.idade}`
 	}
 
-	set nome(novoNome) {
-		return this._nome = novoNome.toUpperCase()
-	}
+
 
 	get nome() {
 		return this._nome.toUpperCase()
@@ -19,7 +17,7 @@ class dono {
 }
 
 const dono1 = new dono('Romario', 33)
-console.log(dono1)
+console.log(dono1.nome)
 
 class pet {
 	constructor(nomePet, especie) {

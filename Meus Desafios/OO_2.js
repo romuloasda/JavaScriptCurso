@@ -1,5 +1,6 @@
 const gamer = { nickname: 'DeusDoTruco', lvl: 50 }
-console.log(gamer.nickname)
+gamer.lvl = 55
+console.log(gamer)
 
 const carro = {
 	modelo: 'Sandero',
@@ -21,3 +22,20 @@ const dog = {
 }
 
 console.log(dog.latir())
+
+const gamer = { nickname: 'DeusDoTruco', lvl: 50 }
+gamer.lvl = 55
+delete gamer.nickname
+
+console.log(gamer)
+
+const smartphone = { marca: 'Samsung', modelo: 's24', arm: '256GB' }
+console.log(smartphone.arm)
+
+for (let phone in smartphone) {
+	console.log(phone + smartphone[phone])
+}
+
+
+
+
