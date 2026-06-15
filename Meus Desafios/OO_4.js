@@ -41,3 +41,42 @@ suporte1.statusMana(aliado1)
 suporte1.statusMana(aliado1)
 suporte1.statusMana(aliado1)
 console.log(aliado1.vida)
+
+
+class JogadorMercantil {
+	constructor(nome) {
+		this.nome = nome
+		this.ouro = 100
+		this.mochila = []
+	}
+}
+
+class Comerciante {
+	constructor() {
+		this.precoPocao = 30
+	}
+
+	venderPocao = (comprador) => {
+		if (comprador.ouro < this.precoPocao) {
+			console.log('Ouro insuficente')
+			return;
+		}
+
+		if (comprador.ouro >= this.precoPocao) {
+			comprador.ouro -= this.precoPocao
+			comprador.mochila.push({ Porção: 'Healler' })
+			console.log(comprador.mochila)
+			return;
+		}
+	}
+}
+
+const player1 = new JogadorMercantil('Gerald')
+console.log(player1)
+const comerciante = new Comerciante
+console.log(comerciante)
+comerciante.venderPocao(player1)
+comerciante.venderPocao(player1)
+comerciante.venderPocao(player1)
+comerciante.venderPocao(player1)
+console.log(player1)
