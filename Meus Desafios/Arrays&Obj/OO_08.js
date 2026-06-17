@@ -54,8 +54,12 @@ class Locadora {
 	}
 
 	listarDisponivel = () => {
-		const filmesDisponiveis = this.acervo.filter(e => e.status === 'Disponivel')
-		console.log(filmesDisponiveis)
+		const filmesDisponiveis = this.acervo
+			.filter(e => e.status === 'Disponivel')
+			.forEach((el, indice) => {
+				console.log(`${indice + 1} - ${el.titulo}`)
+			})
+		// console.log(filmesDisponiveis)
 		return;
 	}
 
@@ -66,12 +70,12 @@ const locarFilme = new Locadora
 locarFilme.alugarFilme('Matrix')
 locarFilme.alugarFilme('Matrix')
 
-const filmes = locarFilme.listarDisponivel()
+locarFilme.listarDisponivel()
 
 // const filmeDisponivel = filmes.forEach((element, indice) => {
 // 	console.log(`${indice + 1} - ${element.titulo}`)
 // });
-console.log(filmes)
+// console.log(locarFilme)
 
 
 
