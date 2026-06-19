@@ -41,3 +41,40 @@ for (let i in precos) {
 console.log(somarIndices, somarInd)
 
 
+const itensRaros = ['Espada de Fogo',
+	'Poção de Vida',
+	'Escudo de Gelo',
+	'Poção de Mana',
+	'Anel Mágico']
+
+for (let i of itensRaros) {
+	if (i.includes('Poção')) {
+		console.log(`Item consumível encontrado: ${i}`)
+	} else {
+		console.log(i)
+	}
+}
+
+for (let i in itensRaros) {
+	if (itensRaros[i].includes('Anel Mágico')) {
+		console.log(`O Anel Mágico está equipado na fenda número: ${i}`)
+	}
+}
+
+const times = ['Botafogo', 'Flamengo', 'Palmeiras', 'Fortaleza']
+
+for (let i = 0; i < times.length; i++) {
+	console.log(`Posição ${i}: ${times[i]}`)
+}
+
+const letras = ['A', 'B', 'C', 'D', 'E']
+for (let i = letras.length - 1; i >= 0; i--) {
+	console.log(letras[i])
+}
+
+const valores = [2, 4, 6, 8]
+for (let i = 0; i < valores.length; i++) {
+	valores[i] = valores[i] * 2
+}
+
+console.log(valores)
