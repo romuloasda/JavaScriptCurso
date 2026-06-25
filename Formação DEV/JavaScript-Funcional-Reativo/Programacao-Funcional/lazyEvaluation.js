@@ -9,7 +9,9 @@ function eager(a, b) {
 	return valor + b
 }
 
+console.time("#1")
 console.log(eager(3, 100))
+console.timeEnd('#1')
 
 function lazy(a) {
 
@@ -25,4 +27,8 @@ function lazy(a) {
 	}
 }
 
-console.log(lazy(1)(1000))
+let lazy3 = lazy(3)
+
+console.time('#2')
+console.log(lazy3(100))
+console.timeEnd('#2')
