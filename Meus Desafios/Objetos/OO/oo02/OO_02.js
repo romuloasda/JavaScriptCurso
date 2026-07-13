@@ -9,17 +9,16 @@ class Foguete {
 	}
 
 	set combustivel(novoValor) {
-		this._combustivel += novoValor
 
-		if (this._combustivel > 500) {
-			this._combustivel = 500
-			return
-		} else if (this._combustivel < 0) {
-			this._combustivel = 0
-			return
+		if (novoValor > 0 && novoValor <= 500) {
+			this._combustivel += novoValor
+		} else if (novoValor > 500) {
+			this._combustivel += 500
 		} else {
-			"❌ Capacidade fora dos limites do tanque!"
+			console.log("❌ Capacidade fora dos limites do tanque!")
 		}
+
+
 	}
 
 	calcularAnatomia() {
@@ -28,10 +27,9 @@ class Foguete {
 }
 
 const novoFoguete = new Foguete('Elon')
-// novoFoguete.combustivel = 600
-novoFoguete.combustivel = 600
-novoFoguete.combustivel =
-	console.log(novoFoguete.combustivel)
+novoFoguete.combustivel = 690
+novoFoguete.combustivel = 690
+console.log(novoFoguete)
 
 class FoguetePesado extends Foguete {
 	constructor(nome) {
@@ -47,12 +45,17 @@ class FoguetePesado extends Foguete {
 
 }
 
-const pesado = new FoguetePesado(novoFoguete)
+const pesado = new FoguetePesado('Musk')
+pesado.combustivel = 300
 console.log(pesado.somarPropulsorExtra())
+console.log(pesado)
 
 const registrarMissao = (objFoguete, ...tripulantes) => {
-	return [new FoguetePesado(objFoguete), ...tripulantes]
+	return {
+		objFoguete,
+		tripulantes: tripulantes
+	}
 }
 
-const equipe = registrarMissao(novoFoguete, 'Marata', 'Eclison', 'arthur')
+const equipe = registrarMissao(pesado, 'Marata', 'Eclison', 'arthur')
 console.log(equipe)
