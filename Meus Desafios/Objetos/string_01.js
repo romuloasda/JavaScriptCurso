@@ -39,5 +39,5 @@ let arrayTags = listaTags.split(",")
 console.log(arrayTags)
 
 let loginUsuario = "  MestreDev@Gmail.Com  "
-let loginLimpo = loginUsuario.trim().toLowerCase().
-	console.log(loginLimpo)
+let loginLimpo = loginUsuario.trim().toLowerCase()
+console.log(loginLimpo)
