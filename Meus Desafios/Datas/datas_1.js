@@ -55,3 +55,15 @@ const diaExato = happyBirday.toLocaleDateString('pt-BR', { weekday: 'long' })
 
 console.log(`Em 2026, meu aniversário vai cair em uma: ${diaExato} `)
 
+const agora = new Date();
+
+console.log(new Date().toLocaleTimeString('pt-BR'));
+
+// Somar 45 minutos:
+agora.setMinutes(agora.getMinutes() + 45);
+
+// Somar 4 horas:
+agora.setHours(agora.getHours() + 4);
+
+// Somar 10 dias:
+agora.setDate(agora.getDate() + 10);

@@ -1,0 +1,125 @@
+seletor { display: block;}
+
+h1 {
+	color: brown;
+	font-size: 16px;
+}
+
+/* Como incluir:
+
+Inline: <p style='...'> ... </p>
+
+Interno: <style>..</style>
+
+Externo: <link: href=".css" rel="stylehead">
+
+Seletores de classes
+
+html: <p class="minha-classe">..<p>
+css: .minha-classe {..}
+
+Seletor de iD
+
+html: <p id="meu-id">...<p>
+#meu-id {...}
+
+Propiedades:
+
+Fonts:
+	font-family: Vai formatar a familia da fonte
+	font-size: Vai mudar o tamanho da fonte
+	font-style: Quando tenho italico ou não
+	font-weigth: Peso da fonte, negrito ou não.
+
+Text:
+	text-align: Pra direita ou para esquerda ou justificado
+	text-decoration: Colocar underline, risco em cima do texto
+	text-indent: identação no inicio de cada palavra
+	text-transform: Colocar texto em mausculo ou em menusculo
+
+#RGB - 0 a F, Red, Green, Blue
+
+Width e Height
+
+p {
+	width: 200px ou em 50% - Largura  e
+	height: 150px, evitar usar porcentagem - Altura dos Paragrafos
+}
+
+Padding - É o preenchimento da borda lateral, usar ele so e preenche
+
+p {										mesma coisa
+	padding-top:50px;			p {padding: 50px 40px 30px 20 px}
+	padding-right:40px;				Lembrar do relogio top é cima
+	padding-bottom:30px;
+	padding-left:20px;
+}
+
+Margin 
+
+
+p {										mesma coisa
+	margin-top:50px;			p {margin: 50px 40px 30px 20 px}
+	margin-right:40px;				Lembrar do relogio top é cima
+	margin-bottom:30px;
+	margin-left:20px;
+}
+
+Se eu deixar faltar algum, ele duplicar o ultimo selecionado
+
+Border
+
+h1 {
+	border-width: 5px;
+	border-style: dotted;
+	border-color: red;
+}
+
+É a mesma coisa que esta escrito em cima
+pode ser escrito dessa forma.
+
+h1 { border: 5px dotted red; }
+
+h1 {
+	border-top-style: solid;
+	border-right-width: 5px;
+	border-bottom-color: red;
+	border-left-color: #ff00ff;
+	border-right-color: #f0f;
+}
+
+Out-line:
+	A diferença do borda é que ele é para fora 
+
+margin: Se não tiver declado a largura vai diminuir os dois lados
+
+box-sizing
+
+Propriedade Display:
+
+Elementos de linha nao recebem as propriedades do width e rigth
+Nunca usar propriedades do box em elemntos de linha
+
+inline-block
+
+Elementos de linha vai funcionar alguma coisas do box.
+
+Pseudo-Classes
+
+1. a:link{} - Estado padrao do link
+2. a:visited{} - Pagina que eu ja visitei
+3. a:hover:{} - Quando eu passo o mouse polo link ele aparece
+4. a:active{} - Quando eu preciono o mouse no link
+
+List-Style
+
+list-style-type - 
+list-style-position
+list-style-image
+
+verção simplificada
+
+list-style: type position image
+
+
+
