@@ -1,0 +1,1 @@
+CHAVE_MESTRA = "admin123"

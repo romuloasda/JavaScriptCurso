@@ -11,6 +11,20 @@
 
 # bool(): Converte para valor booleano.
 
+# O usuário digita: "10 20"
+# num1, num2 = input("Digite dois números separados por espaço: ").split()
+
+# # Como o input devolve string, convertemos individualmente [cite: 12]
+# num1 = int(num1) [cite: 14]
+# num2 = int(num2) [cite: 14]
+
+# print(f"Soma: {num1 + num2}")
+
+# Alinhamento e preenchimento:
+# f"{nome:>10}" $\rightarrow$ Alinha à direita em 10 caracteres.
+# f"{nome:<10}" $\rightarrow$ Alinha à esquerda em 10 caracteres.
+# f"{nome:^10}" $\rightarrow$ Centraliza em 10 caracteres.
+
 nome_produto = input("Digite o nome do produto: ")
 preco_produto = int(input("Digite o preço do produto: "))
 qtd = int(input("Qual a quantidade de produtos: "))
