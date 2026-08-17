@@ -61,3 +61,10 @@ for usuario in usuarios_bloqueados:
 else:
     # Este 'else' pertence ao 'for'! Só roda se o laço percorrer TUDO sem dar 'break'
     print("✅ Usuário liberado para acesso.")
+
+
+# Quando você mistura and, or e not sem parênteses, o Python não avalia da esquerda para a direita. Ele segue uma ordem de prioridade estrita:
+
+# not (Avaliado primeiro) 
+# and (Avaliado em segundo) 
+# or (Avaliado por último)

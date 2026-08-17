@@ -57,5 +57,21 @@ if (n := len(codigo)) < 5:
 	print(f"Código muito curto: apenas {n} letras")
 
 
+tem_acesso = False
+tem_chave = False
+sistema_aberto = True
+
+if (tem_acesso or tem_chave) and sistema_aberto:
+	print("Tem acesso, pode entrar")
+else:
+	print('Acesso BLOQUEADO')
+
+temperatura = 23
+
+match temperatura:
+	case t if t > 30:
+		print("Muito quente!")
+	case _:
+		print("Muito agradavel")
 
 
