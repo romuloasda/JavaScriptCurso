@@ -12,3 +12,6 @@ const produto = {
 
 const precoFinal = produto.precoComDesconto()
 console.log(precoFinal)
+
+let x = 1
+
