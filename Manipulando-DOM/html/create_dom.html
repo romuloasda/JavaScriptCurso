@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>test Dom</h1>
+
+	<div class="container">
+		<p>teste 1</p>
+		<p>lorem <a href="#"></a>.</p>
+		<p>test 2</p>
+
+		<h2>Lista</h2>
+		<ul>
+			<li>item 1</li>
+			<li>item 2</li>
+				<ul>
+					<li>item 2.a</li>
+					<li>item 2.b</li>
+					<li>item 2.c</li>
+				</ul>
+			<li>item <a href="#"></a>link</li>
+		</ul>
+	</div>
+
+	<script>
+
+		const title = document.createElement('h1')
+		const atributo = document.createAttribute('id')
+		atributo.value = 'title1'
+		title.setAttributeNode(atributo)
+
+		title.setAttribute('title', 'title inserido dinamicamente')
+		title.setAttribute('style', 'color: red;')
+		
+		
+		const text = document.createTextNode('criar nós no DOM')
+		title.appendChild(text)
+
+		text.textContent = 'texto inserido com textContent'
+		
+		console.log(title)
+		</script>
+</body>
+</html>

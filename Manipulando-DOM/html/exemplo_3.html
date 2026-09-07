@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Vamos estudar remover parents e child</h1>
+	<p class="nome">Nome de usuario: </p>
+
+	<input type="checkbox" id="textNome" placeholder="nome" onclick="digiteNome()" >
+	<label for="">Click em check</label>
+	<p>document.getElementsByTagname() ,getElementsByClassName() toda essa sintaxe que começa com getElements retorna uma html collections, ao contrario do node list essa html collections é viva, mutavel.
+	</p>
+	<p>document.querySelectorAll vai retornar uma Node.list que é estatica</p>
+	<p> Para acessa os pais: Node.parentNode, parentElement, nextSibling, previousSibling</p>
+	<p>Para acessar os filhos:
+		<ul>Node.
+			<li>childNodes</li>
+			<li>children</li>
+			<li>firstChild</li>
+			<li>firstElementChild</li>
+			<li>lastChild</li>
+			<li>lastElementChild</li>
+			<li>hasChildNodes() para verificar se tem filgos</li>
+		</ul>
+	</p>
+	<p>Para adicionar nós
+		<ul>
+			<li>ParentNode.
+				<ol>
+					<li>prepend()</li>
+					<li>append()</li>
+				</ol>
+			</li>
+			<br>
+			<li>Node.
+				<ol>
+					<li>appendChild</li>
+					<li>insertBefore()</li>
+					<li>cloneNode</li>
+				</ol>
+			</li>
+			<br>
+			<li>ChildNode.
+				<ol>
+					<li>after()</li>
+					<li>before</li>
+				</ol>
+			</li>
+		</ul>
+	</p>
+	<p><b>Element</b> insertAdjacentElement(), insertAdjacentHTML(), insertAdjacentText()</p>
+
+	<p><b>Como remover nós</b>
+		<ul>Node.
+			<li>replaceChild()</li>
+			<li>removeChild()</li>
+		</ul>
+		<ul>ChildNode.
+			<li>remove()</li>
+		</ul>
+	</p>
+
+	<p><b>Criar nós</b></p>
+	<ul>document.
+		<li>creatElement()</li>
+		<li>creatAtribute()</li>
+		<li>createTextNode()</li>
+		<li>write()</li>
+	</ul>
+
+	<div class="container">
+		<ul id="list">
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+			<li>Item 5</li>
+		</ul>
+
+	</div>
+
+	<script>
+		const nodelist = document.querySelectorAll('#list li')
+		const collection = document.getElementById('list').getElementsByTagName('li')
+		console.log(nodelist)
+		console.log(collection)
+
+		document.querySelector('#list').innerHTML += '<li> Item 6 </li>'
+
+		console.log(nodelist)
+		console.log(collection)
+
+		document.getElementById('list').innerHTML += '<li> Item 7 </li>'
+
+		console.log(nodelist)
+		console.log(collection)
+
+
+
+		// function digiteNome() {
+		// 	console.log("digiteNome")
+		// }
+
+
+	</script>
+	
+</body>
+</html>

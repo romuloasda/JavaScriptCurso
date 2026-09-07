@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1 class="">test Dom</h1>
+
+	<div class="container">
+		<p>teste 1</p>
+		<p>lorem <a href="#"></a>.</p>
+		<p>test 2</p>
+
+		<h2>Lista</h2>
+		<ul>
+			<li>item 1</li>
+			<li>item 2</li>
+				<ul>
+					<li>item 2.a</li>
+					<li>item 2.b</li>
+					<li>item 2.c</li>
+				</ul>
+			<li>item <a href="#"></a>link</li>
+		</ul>
+	</div>
+
+	<script>
+		console.log(document.body)
+		console.log(document.body.parentElement)
+		console.log(document.body.parentNode)
+
+		const h2 = document.querySelector('h2')
+		console.log(h2.nextSibling)
+		const h2Previus = h2.nextElementSibling
+		h2Previus.style.background = 'yellow'
+		console.log(h2.previousElementSibling)
+
+
+		const link = document.querySelector('a')
+		const list = document.querySelector('ul ul')
+
+		console.log(link)
+
+		console.log(list.childNodes)
+		console.log(list.children)
+
+		console.log(link.parentElement.childNodes)
+		console.log(link.parentElement.children)
+
+		console.log(link.parentElement.lastChild)
+		console.log(link.parentElement.lastElementChild)
+	</script>
+	
+</body>
+</html>

@@ -48,3 +48,10 @@ function newPalidromo(texto) {
 }
 
 console.log(newPalidromo('AMA'))
+
+function ternarioPalidromo(texto) {
+	const validando = texto.split('').reverse().join('').toLowerCase()
+	return validando === texto ? 'isso é um palidromo' : 'Isso nao é um palidromo'
+}
+
+console.log(ternarioPalidromo('amaa'))
