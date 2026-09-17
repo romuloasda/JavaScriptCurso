@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <nav id="menu-loja">
+            <ul class="lista-nivel-1">
+                <li class="item" data-id="1">
+                    <a href="#" class="link">Eletrônicos</a>
+
+                    <!-- Submenu -->
+                    <ul class="submenu">
+                        <li class="item" data-id="10">
+                            <a href="#" class="link">Smartphones</a>
+                        </li>
+                        <li class="item" data-id="11">
+                            <a href="#" class="link">Notebooks</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="comentario-card" id="comentario-10">
+            <header class="autor-area">
+                <strong class="nome">Renata</strong>
+            </header>
+
+            <div class="acoes">
+                <button class="btn-like">Curtir</button>
+                <button class="btn-responder">Responder</button>
+            </div>
+        </div>
+
+        <div class="comentario-card" id="comentario-20">
+            <header class="autor-area">
+                <strong class="nome">Marcos</strong>
+            </header>
+
+            <div class="acoes">
+                <button class="btn-like">Curtir</button>
+            </div>
+        </div>
+        <script>
+            const itemPrincipal = document.querySelector('[data-id="1"]');
+            const link = itemPrincipal.querySelector(":scope > .link");
+            const subMenu = itemPrincipal.querySelector(":scope > .submenu");
+            link.textContent = "Tecnologia";
+
+            const ultimoLink = subMenu.querySelector(
+                ":scope > .item:last-child .link",
+            );
+            ultimoLink.style.color = "purple";
+
+            const botao = document.querySelector(
+                "#comentario-10 .btn-responder",
+            );
+            const card = botao.closest(".comentario-card");
+            const strong = botao.querySelector(".btn-like");
+            strong.textContent = "Já curtido";
+        </script>
+    </body>
+</html>

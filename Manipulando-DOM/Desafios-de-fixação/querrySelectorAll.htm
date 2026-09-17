@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<section id="vitrine">
+		<div class="card">Produto 1</div>
+		<div class="card">Produto 2</div>
+		<div class="card">Produto 3</div>
+		<div class="card">Produto 4</div>
+	</section>
+
+	<script>
+		const vitrine = document.querySelector('#vitrine');
+
+		// Busca todos os .card apenas dentro de vitrine e já permite o forEach:
+		const cards = vitrine.querySelectorAll('.card');
+		const h2 = document.createElement('h2')
+		h2.innerText = `Destaques da Semana`
+		vitrine.before(h2)
+		
+		// 2. Criando o card de oferta
+		const novoCard = document.createElement('div');
+		novoCard.classList.add('card');
+		novoCard.textContent = 'Super Oferta Zero';
+
+		// 3. Inserindo dentro da vitrine, como primeiro item
+		vitrine.prepend(novoCard);
+
+		// cards.forEach((card, index) => {
+		// card.style.backgroundColor = '#f0f0f0';
+		// });
+
+		cards.forEach((card, index) => {
+			if (index % 2 === 0) {
+				card.style.color = 'pink';
+			} else {
+				card.style.color = 'blue';
+			}
+		})
+	</script>
+</body>
+</html>

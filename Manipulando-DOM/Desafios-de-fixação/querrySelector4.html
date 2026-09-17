@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="painel" id="painel-vendas">
+            <div class="linha">
+                <span class="rotulo">Status:</span>
+                <span class="valor">Pendente</span>
+            </div>
+            <div class="linha">
+                <span class="rotulo">Total:</span>
+                <span class="valor">R$ 150,00</span>
+            </div>
+        </div>
+
+        <div class="painel" id="painel-estoque">
+            <div class="linha">
+                <span class="rotulo">Itens:</span>
+                <span class="valor">12</span>
+            </div>
+        </div>
+
+        <section id="vitrine-promocoes">
+            <article class="produto" data-codigo="101">
+                <h4 class="nome">Teclado Mecânico</h4>
+                <p class="descricao">Switch Blue, RGB</p>
+                <div class="detalhes">
+                    <span class="preco">R$ 250,00</span>
+                </div>
+            </article>
+
+            <article class="produto" data-codigo="102">
+                <h4 class="nome">Mouse Gamer</h4>
+                <p class="descricao">16000 DPI</p>
+                <div class="detalhes">
+                    <span class="preco">R$ 180,00</span>
+                </div>
+            </article>
+        </section>
+
+        <script>
+            const painelVendas = document.querySelector("#painel-vendas");
+            const primeiraLinha = painelVendas.querySelector(".linha");
+            const valor = primeiraLinha.querySelector(".valor");
+            valor.textContent = `Aprovado`;
+            const valor2 = painelVendas.querySelector(
+                ".linha:last-child .valor",
+            );
+            valor2.style.color = "green";
+            valor2.textContent = 200;
+            console.log(valor2);
+
+            const mouse = document.querySelector('[data-codigo="102"]');
+            const nome = mouse.querySelector(":scope > .nome");
+            const preco = mouse.querySelector(".detalhes:last-child .preco");
+            const detalhes = mouse.querySelector(":scope > .detalhes");
+
+            nome.style.color = "orange";
+            preco.textContent = "R$ 150,00";
+            detalhes.parentElement.style.border = "2px solid blue";
+        </script>
+    </body>
+</html>

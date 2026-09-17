@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Manipulando Array Com HTML</title>
+    </head>
+    <body>
+        <div>
+            <ul id="lista_frutas">
+                Listas de frutas
+            </ul>
+        </div>
+        <div id="nao-ordenada">
+            Lista Não Ordenada
+            <button id="btn-add">Adicionar Fruta</button>
+            <ul id="lista-usuarios"></ul>
+            <div id="painel-precos"></div>
+        </div>
+    </body>
+    <script>
+        const frutas = ["morango", "maçã", "uva"];
+        const usuarios = ["ana", "carlos", "marianda"];
+        const precos = [15, 30, 80];
+        const lista_frutas = document.querySelector("#lista_frutas");
+        const lista_usuarios = document.querySelector("#lista-usuarios");
+        const painel_precos = document.querySelector("#painel-precos");
+        const divNaoOrdenada = document.querySelector("#nao-ordenada");
+        const btn_add = document.querySelector("#btn-add");
+
+        btn_add.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const addFruta = "laranja";
+            frutas.push(addFruta);
+            lista_frutas.innerHTML += `<li>${addFruta}</li>`;
+        });
+        console.log(frutas);
+
+        const produtos = [
+            { nome: "Teclado", preco: 150 },
+
+            { nome: "Mouse", preco: 80 },
+
+            { nome: "Monitor", preco: 900 },
+        ];
+
+        produtos.forEach((prod) => {
+            const criandop = document.createElement("p");
+            criandop.innerText = `Nome: ${prod.nome}, Preço: ${prod.preco}`;
+            divNaoOrdenada.appendChild(criandop);
+        });
+
+        frutas.forEach((fruta) => {
+            lista_frutas.innerHTML += `<li>${fruta}</li>`;
+        });
+
+        usuarios.forEach((usuario) => {
+            lista_usuarios.innerHTML += `<li>${usuario}</li>`;
+        });
+
+        precos.forEach((preco) => {
+            const criandoP = document.createElement("p"); // Cria a tag <p> via document
+            criandoP.textContent = `Preço: R$ ${preco}`; // Define o conteúdo do texto
+            painel_precos.appendChild(criandoP); // Insere o <p> dentro da div
+            console.log(criandoP);
+            console.log(painel_precos);
+        });
+    </script>
+</html>

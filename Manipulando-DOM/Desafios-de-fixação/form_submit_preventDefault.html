@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Mudando o FORM</h1>
+	<form id="formTarefa">
+		<input type="text" id="inTarefa" required>
+		<button type="submit">Cadastrar Nova Tarefa</button>
+	</form>
+	<ol id="lista"></ol>
+
+	<script>
+		const frm = document.querySelector('#formTarefa')
+		const lista = document.querySelector('#lista')
+
+
+		frm.addEventListener('submit', e => {
+			e.preventDefault()
+
+			const tarefa = frm.inTarefa.value
+			const novaTarefa = document.createElement('li')
+			novaTarefa.innerText = `${tarefa}`
+			
+			lista.append(novaTarefa)
+			
+			frm.inTarefa.focus()
+			frm.inTarefa.value = ''
+			// frm.reset()
+
+		})
+	</script>
+	
+</body>
+</html>

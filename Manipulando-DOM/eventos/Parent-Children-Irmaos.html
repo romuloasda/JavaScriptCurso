@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Regra de ouro da navegação de elementos</h1>
+	<p>Sempre que quiser navegar apenas entre tags HTML (ignorando espaços vazios), procure pelas propriedades que contêm a palavra Element:
+		<br>
+		<ol>
+			<li>parentElement sobe para a tag pai.</li>
+			<li>children: lista de todas as tags filhas (como um array).</li>
+			<li>firstElementChild: primeira tag.</li>
+			<li>filha.lastElementChild: última tag. </li>
+			<li>filha.nextElementSibling: tag irmã que vem depois.</li>
+			<li>previousElementSibling: tag irmã que vem antes.</li>
+		</ol>
+	</p>
+	<div id="painel">
+		<ul id="lista-menu">
+			<li>Início</li>
+			<li id="meio">Sobre</li>
+			<li>Contato</li>
+		</ul>
+	</div>
+
+	<script>
+		const meio = document.querySelector('#meio')
+		const irmaoDeMeio = meio.nextElementSibling;
+		irmaoDeMeio.textContent = `Fale Conosco`
+
+		const antesDeMeio = irmaoDeMeio.previousElementSibling
+	</script>
+	
+</body>
+</html>

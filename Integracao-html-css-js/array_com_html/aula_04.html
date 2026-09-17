@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <section id="lista-artigos">
+            <article class="post" id="post-1">
+                <div class="topo">
+                    <h3 class="titulo">Primeiro Artigo</h3>
+                    <span class="badge">Rascunho</span>
+                </div>
+                <div class="rodape">
+                    <button class="btn-publicar">Publicar</button>
+                </div>
+            </article>
+
+            <article class="post" id="post-2">
+                <div class="topo">
+                    <h3 class="titulo">Segundo Artigo</h3>
+                    <span class="badge">Rascunho</span>
+                </div>
+                <div class="rodape">
+                    <button class="btn-publicar">Publicar</button>
+                </div>
+            </article>
+        </section>
+        <script>
+            const btn = document.querySelector("#post-2 .btn-publicar");
+            const postPai = btn.closest(".post");
+            const topo = postPai.firstElementChild;
+            const titulo = topo.firstElementChild;
+            console.log(titulo);
+            const badge = postPai.querySelector(".badge");
+            console.log(badge);
+
+            btn.addEventListener("click", (e) => {
+                titulo.textContent += " [AO VIVO] ";
+                badge.textContent =
+                    "closest, nextElementSibling, previouElementSiblig";
+                badge.style.color = "green";
+                btn.style.background = " #DCDCDC";
+                btn.textContent = "PUBLICADO";
+                btn.disabled = true;
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="painel-config">
+            <div class="linha">
+                <span>Notificações</span>
+                <button class="toggle ativo">Desativar</button>
+            </div>
+            <div class="linha">
+                <span>Som</span>
+                <button class="toggle">Ativar</button>
+            </div>
+            <p class="nota">As alterações são salvas automaticamente.</p>
+        </div>
+    </body>
+    <script>
+        const painelConfig = document.querySelector("#painel-config");
+
+        painelConfig.addEventListener("click", (e) => {
+            if (!e.target.matches(".toggle")) {
+                return;
+            } else {
+                e.target.classList.toggle("ativo");
+            }
+        });
+    </script>
+</html>

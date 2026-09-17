@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <label for="">Digite a fruta que voce quer add</label>
+        <form id="frm">
+            <input type="text" id="btn_fruta" />
+            <input type="submit" />
+        </form>
+        <ul id="lista_de_fruta">
+            Lista de FRUTAS
+        </ul>
+        <button id="btn-removeFruta">Remover Ultimo Fruta</button>
+        <br />
+        <br />
+        <label for="">Digite o nome da fruta que voce quer remover</label>
+        <form id="frm2">
+            <input type="text" id="inFruta" />
+            <input type="submit" />
+        </form>
+
+        <script>
+            const frutas = ["Morango", "Banana", "uva"];
+            const frm = document.querySelector("#frm");
+            const lista_frutas = document.querySelector("#lista_de_fruta");
+            const btn_removeFruta = document.querySelector("#btn-removeFruta");
+            const frm2 = document.querySelector("#frm2");
+
+            frutas.forEach((frut) => {
+                lista_frutas.innerHTML += `<li>${frut}</li>`;
+            });
+
+            frm.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const fruta = frm.btn_fruta.value;
+
+                if (!fruta) {
+                    alert("Digite o nome da fruta");
+                    return;
+                }
+
+                frutas.push(fruta);
+                lista_frutas.innerHTML += `<li>${fruta}</li>`;
+
+                frm.btn_fruta.focus();
+                frm.btn_fruta.value = "";
+                console.log(frutas);
+            });
+
+            btn_removeFruta.addEventListener("click", (e) => {
+                e.preventDefault();
+
+                if (frutas.length <= 0) {
+                    alert("A lista esta vazia");
+                    return;
+                }
+
+                frutas.pop();
+                lista_frutas.lastElementChild.remove();
+            });
+
+            frm2.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const remover = frm2.inFruta.value;
+                if (frutas.includes(remover)) {
+                    const index = frutas.indexOf(remover);
+                    frutas.splice(index, 1);
+                    e.target.frm2.remove();
+                    alert(index);
+                } else {
+                    alert("aksjdasd");
+                }
+
+                frm2.inFruta.focus();
+                frm2.inFruta.value = "";
+            });
+        </script>
+    </body>
+</html>

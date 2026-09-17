@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div>
+            <button id="btn-contar">Contar</button>
+            <p id="contador">0</p>
+        </div>
+        <br />
+        <button id="botao">Evento</button>
+        <br /><br />
+        <div>
+            <button id="btn-ola" data-mensagem="Seja bem-vindo!">
+                Dizer Olá
+            </button>
+            <button id="btn-tchau" data-mensagem="Até logo!">
+                Dizer Tchau
+            </button>
+            <p id="saida"></p>
+        </div>
+        <div>
+            <input type="text" id="campo-texto" placeholder="Digite algo..." />
+            <p id="aviso"></p>
+        </div>
+        <div>
+            <input
+                type="text"
+                id="campo-espelho"
+                placeholder="Digite algo..."
+            />
+            <input type="color" id="seletor-cor" />
+
+            <h2 id="texto-exibicao">Texto Dinâmico</h2>
+        </div>
+        <script>
+            const btnContar = document.querySelector("#btn-contar");
+            const botao = document.querySelector("#botao");
+            let contador = document.querySelector("#contador");
+            let total = Number(contador.textContent);
+            const btnOla = document.getElementById("btn-ola");
+            const saida = document.getElementById("saida");
+            const texto = document.getElementById("campo-texto");
+            const aviso = document.getElementById("aviso");
+
+            texto.addEventListener("keyup", (e) => {
+                if (e.key === "Enter") {
+                    let msg = texto.value;
+                    aviso.textContent = `Você enviou o ${msg} ! `;
+                } else if (e.key === "Escape") {
+                    texto.value = "";
+                    aviso.textContent = "Operação cancelada";
+                }
+            });
+
+            function mostrarMensagem(e) {
+                saida.textContent = e.target.dataset.mensagem;
+            }
+            btnOla.addEventListener("click", mostrarMensagem);
+
+            function avisarClique() {
+                total++;
+                console.log("Botao Acionado");
+                contador.textContent = total;
+            }
+
+            btnContar.addEventListener("click", avisarClique);
+
+            botao.addEventListener("click", (event) => {
+                console.log(event); // Objeto completo com dezenas de propriedades
+                console.log(event.type); // 'click'
+                console.log(event.target); // Retorna exatamente o elemento HTML que foi acionado
+                console.log(event.currentTarget);
+            });
+        </script>
+    </body>
+</html>

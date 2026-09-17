@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<section id="vitrine">
+		<div class="card">Produto 1</div>
+		<div class="card">Produto 2</div>
+		<div class="card">Produto 3</div>
+		<div class="card">Produto 4</div>
+	</section>
+
+	<script>
+		const vitrine = document.querySelector('#vitrine')
+		const card = document.querySelectorAll('.card')
+		const divEsgotado = document.createElement('div')
+		divEsgotado.classList.add('card')
+		divEsgotado.textContent = 'ESGOTADO'
+		const esgotado = vitrine.children[2]
+		esgotado.replaceWith(divEsgotado)
+
+		const primeiroElemento = vitrine.children[0]
+
+		const clone = primeiroElemento.cloneNode(true)
+		clone.textContent = 'Produto 5'
+
+		vitrine.append(clone)
+
+	</script>
+</body>
+</html>

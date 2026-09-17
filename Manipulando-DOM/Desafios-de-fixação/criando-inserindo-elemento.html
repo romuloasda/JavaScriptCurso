@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		<h1>Vamos criar um elemento li</h1>
+		<ol id="lista">
+	
+		</ol>
+		<button id="btn1">CLICK</button>
+	</div>
+	<br>
+	<div>
+		<input type="text" id="inTarefa">
+		<button id="btn2"> Adicionar</button>
+		<button id="remover">Remover</button>
+		<ol id="listaTarefa"></ol>
+	</div>
+
+	<script>
+		const btn1 = document.querySelector('#btn1')
+		const btn2 = document.querySelector('#btn2')
+		const remover = document.querySelector('#remover')
+
+		btn1.addEventListener('click', () => {
+			const lista = document.querySelector('#lista')
+			const novoItem = document.createElement('li')
+			novoItem.textContent = 'Lista Criada'
+
+			lista.append(novoItem)
+
+
+		})
+
+
+
+		btn2.addEventListener('click', () => {
+			const tarefa = document.querySelector('#inTarefa')
+			const listaTarefa = document.querySelector('#listaTarefa')
+			const novaTarefa = document.createElement('li')
+
+			novaTarefa.textContent = tarefa.value
+			listaTarefa.append(novaTarefa)
+
+			listaTarefa.addEventListener('click', (e) => {
+				e.target.style.color = 'red'
+			 })
+
+
+		})
+
+		remover.addEventListener('click', () => {
+			const ultimoItem = document.querySelector('#listaTarefa li:last-child')
+
+			if (ultimoItem) {
+				ultimoItem.remove()
+			}
+		})
+
+
+
+	</script>
+	
+</body>
+</html>
+
+
+<!-- Criar na memória: const item = document.createElement('tag')
+
+Configurar: adicionar texto (item.textContent = ...), classes, etc.
+
+Colocar na tela (como filho de outro elemento): pai.append(item) 
+
+o e.target, que aponta para o elemento exato que sofreu o clique.
+-->

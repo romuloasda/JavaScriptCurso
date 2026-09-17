@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="gerenciador">
+            <div class="tarefa" data-id="1">
+                <input type="checkbox" class="marcador" checked />
+                <span class="descricao">Comprar pão</span>
+                <button class="btn-acao">Editar</button>
+            </div>
+
+            <div class="tarefa" data-id="2">
+                <input type="checkbox" class="marcador" />
+                <span class="descricao">Estudar DOM</span>
+                <button class="btn-acao">Editar</button>
+            </div>
+        </div>
+        <script>
+            const gerenciador = document.querySelector("#gerenciador");
+            const tarefa = gerenciador.querySelector(
+                ":scope > .tarefa:has(.marcador:checked)",
+            );
+            tarefa.style.background = "#e0ffe0";
+            const descricao = tarefa.querySelector(".descricao");
+            descricao.style.textDecoration = "line-through";
+        </script>
+    </body>
+</html>

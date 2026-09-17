@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Navegando</h1>
+	<div>
+		<p>
+				Tópico 1: Navegando pela Árvore da DOM (Parent e Children)
+			A DOM é literalmente uma árvore de nós (pais e filhos). Muitas vezes você seleciona um elemento e precisa alcançar quem está acima dele ou quem está dentro dele sem precisar de novos IDs ou classes.
+
+			elemento.parentElement: Acessa o elemento pai imediato.
+
+			elemento.children: Retorna uma coleção com todos os elementos filhos diretos.
+
+			elemento.firstElementChild: O primeiro filho.
+
+			elemento.lastElementChild: O último filho.
+			<br><br>
+			<b>A diferença crucial:</b>
+			<br><br>
+			<strong>firstChild:</strong> Pega o primeiro nó. Na maioria das vezes, o primeiro nó é uma quebra de linha ou espaço em branco do seu HTML (um nó de texto #text), e não a tag .
+			<br><br>
+			<strong>firstElementChild:</strong> Pega obrigatoriamente a primeira tag HTML real, ignorando espaços e quebras de linha.
+		</p>
+	</div>
+
+	<div id="caixa-pai">
+		<p>Primeiro parágrafo</p>
+		<p>Segundo parágrafo</p>
+	</div>
+	<br>
+	<div id="card">
+		<h2>Título do Card</h2>
+		<p id="descricao">Texto descritivo do produto.</p>
+		<span>R$ 50,00</span>
+	</div>
+		
+
+	<script>
+		const pai = document.querySelector('#caixa-pai');
+
+		// Pega o primeiro filho direto (<p>Primeiro...</p>)
+		const primeiro = pai.firstElementChild;
+		primeiro.style.color = 'blue';
+
+		// A partir do filho, alcança o pai e muda a borda dele
+		primeiro.parentElement.style.border = '2px solid black';
+
+		const card = document.querySelector('#descricao')
+		const cardPai = card.parentElement;
+		cardPai.style.border = '5px solid lightgray';
+
+		const cardFilho = cardPai.firstElementChild
+		cardFilho.innerText = 'Produto Atualizado'
+
+	
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <section id="vitrine">
+            <div class="card">
+                <span>Camiseta</span>
+                <button class="btn-apagar">Excluir</button>
+            </div>
+            <div class="card">
+                <span>Tênis</span>
+                <button class="btn-apagar">Excluir</button>
+            </div>
+            <div class="card">
+                <span>Boné</span>
+                <button class="btn-apagar">Excluir</button>
+            </div>
+        </section>
+
+        <script>
+            const vitrine = document.querySelector("#vitrine");
+
+            vitrine.addEventListener("click", (e) => {
+                const botaoApagar = e.target.closest(".btn-apagar");
+
+                if (!botaoApagar) return;
+
+                const cardPai = botaoApagar.closet(".card");
+                cardPai.remove();
+            });
+        </script>
+    </body>
+</html>

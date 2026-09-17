@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<article id="post-10">
+		<header>
+			<h2 class="titulo">Navegação DOM</h2>
+			<span class="data">10 de Setembro</span>
+		</header>
+		
+		<div class="conteudo">
+			<p>Aprendendo a usar seletores relativos.</p>
+			<button class="btn-apagar">Apagar Post</button>
+		</div>
+	</article>
+	<br><br>
+	<section id="vitrine">
+		<div class="card">Produto 1</div>
+		<div class="card">Produto 2</div>
+		<div class="card">Produto 3</div>
+		<div class="card">Produto 4</div>
+	</section>
+
+	<script>
+		// 1. Definindo a âncora no botão
+		const botao = document.querySelector('.btn-apagar');
+
+		// 2. Subindo até o pai principal (article) ignorando as divs intermediárias
+		const post = botao.closest('article');
+		post.style.border = '2px solid red';
+
+		// 3. A partir do post, buscando um filho específico dentro dele
+		const titulo = post.querySelector('.titulo');
+		titulo.textContent = 'Post Selecionado!';
+
+		const data = document.querySelector('.data');
+		const paiDeData = data.parentElement
+		console.log(paiDeData)
+		const irmaoDeData = data.previousElementSibling;
+		irmaoDeData.textContent += ` Eu sou o primeiro filho`
+
+		const acessandoDiv = paiDeData.nextElementSibling;
+		acessandoDiv.style.display = 'none'
+
+		const vitrine = document.querySelector('#vitrine');
+
+		const filhoVitrine = vitrine.children.length
+		console.log(filhoVitrine)
+
+		const filhoVitrine2 = vitrine.children[1]
+		filhoVitrine2.style.color = 'blue'
+
+		vitrine.lastElementChild.textContent = 'Ultimo item'
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="carrinho" id="meu-carrinho">
+            <div class="item" data-sku="A1">
+                <span class="nome">Camisa Polo</span>
+                <div class="controles">
+                    <button class="btn-menos">-</button>
+                    <span class="quantidade">1</span>
+                    <button class="btn-mais">+</button>
+                </div>
+                <span class="subtotal">R$ 80,00</span>
+            </div>
+
+            <div class="item" data-sku="B2">
+                <span class="nome">Calça Jeans</span>
+                <div class="controles">
+                    <button class="btn-menos">-</button>
+                    <span class="quantidade">2</span>
+                    <button class="btn-mais">+</button>
+                </div>
+                <span class="subtotal">R$ 240,00</span>
+            </div>
+        </div>
+
+        <script>
+            const botaoMais = document.querySelector(
+                '[data-sku="B2"] .btn-mais',
+            );
+
+            const controles = botaoMais.closest(".controles");
+            console.log(controles);
+
+            const btn_menos = controles.firstElementChild;
+            console.log(btn_menos);
+
+            const btn_mais = controles.lastElementChild;
+            console.log(btn_mais);
+
+            const itemPai = controles.closest(".item");
+            console.log(itemPai);
+
+            const subtotal = itemPai.querySelector(".subtotal");
+            console.log(subtotal);
+
+            const qtd = itemPai.querySelector(".quantidade");
+
+            (function valoTotoal() {
+                let numero = Number(qtd.textContent);
+
+                botaoMais.addEventListener("click", (e) => {
+                    numero += 1;
+                    console.log(typeof numero);
+                    qtd.innerText = numero;
+                    valoTotoal();
+                });
+
+                btn_menos.addEventListener("click", (e) => {
+                    numero -= 1;
+                    qtd.innerText = numero;
+
+                    if (numero < 0) {
+                        qtd.innerText = 0;
+                        return;
+                    }
+
+                    valoTotoal();
+                });
+
+                let valor = 240;
+                subtotal.textContent = `TOTAL R$ ${240 * numero}`;
+            })();
+        </script>
+    </body>
+</html>

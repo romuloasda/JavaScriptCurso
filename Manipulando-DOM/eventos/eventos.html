@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Eventos</h1>
+	<div id="container"></div>
+	<button id="btn1">Bota 1</button>
+	<button id="btn2">Bota 2</button>
+	<button id="btn3">Bota 3</button>
+	<br>
+	<h1>Delegação de eventos</h1>
+	<div id="container2">
+		<button>Botão 1</button>
+		<button>Botão 2</button>
+		<button>Botão 3</button>
+	</div>
+
+	<script>
+		const btn1 = document.getElementById('btn1')
+		const btn2 = document.getElementById('btn2')
+		const btn3 = document.getElementById('btn3')
+
+		function clicou (){console.log("Click btn function")}
+
+
+		btn1.onclick = function(){console.log("Click btn1")}
+
+		btn1.onclick = clicou
+
+		btn2.addEventListener("click", clicou)
+
+
+		btn2.addEventListener("click", (e) => {
+			// e.stopImmediatePropagation() // vai para a propagação nao vai executar o demais
+			console.log('click2')
+		})
+
+		btn3.addEventListener('click', () => {
+			console.log('Clicou btn3')
+		})
+
+		document.addEventListener('click', () => {
+			console.log('clicou no documento')
+		}, true) // para que o documento seja executado primeiro add o true
+
+		const container = document.getElementById('container')
+		container.addEventListener('click', () => {
+			console.log('clicou no container')
+		})
+
+		const container2 = document.querySelector('container2');
+		const btns = document.querySelectorAll('.container2 button');
+
+		// [...btns].forEach(btn => {
+		// 	btn.addEventListener('click', e => {
+		// 		e.stopPropagation()
+		// 		console.log(e.target)
+		// 	})
+		// });
+
+		container2.addEventListener('click', e => {
+			e.stopPropagation()
+			
+		})
+	</script>
+</body>
+</html>

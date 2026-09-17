@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body.escuro {
+			background-color: #222;
+			color: #fff;
+		}
+	</style>
+	<title>Document</title>
+</head>
+<body>
+	<div id="container">
+		<h1 id="titulo"> Carregando...</h1>
+		<button id="btn">Troca</button>
+	</div>
+		<label for="nome"> Digite seu nome: </label>
+		<input type="text" id="inNome" name="nome">
+		<button id="btn2">Dizer olá</button>
+		<p id="msg"></p>
+
+	<div>
+		<h1>Modo noturno</h1>
+		<button id="btn-tema">alterar tema</button>
+	</div>
+
+	<script>
+	const titulo = document.querySelector('#titulo');
+	const btn = document.querySelector('#btn');
+	const container = document.querySelector('#container')
+	const nome = document.querySelector('#inNome')
+	const btn2 = document.querySelector('#btn2')
+	const msg = document.querySelector('#msg')
+	const btnTema = document.querySelector('#btn-tema')
+
+	btn.addEventListener('click', () => {
+		container.style.backgroundColor = 'green'
+		titulo.style.fontSize = '40px'
+		titulo.textContent = 'Aprendendo DOM'
+	})
+
+	btn2.addEventListener('click', (e) => {
+		const nomeDigitado = nome.value
+		msg.textContent = `Olá, ${nomeDigitado}`
+
+		nome.value = ''
+		
+	})
+
+	btnTema.addEventListener('click', (e) => {
+		document.body.classList.toggle('escuro')
+	})
+
+	</script>
+	
+</body>
+</html>
