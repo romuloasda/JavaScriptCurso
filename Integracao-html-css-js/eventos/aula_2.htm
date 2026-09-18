@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div>
+            <input
+                type="text"
+                id="campo-espelho"
+                placeholder="Digite algo..."
+            />
+            <input type="color" id="seletor-cor" />
+
+            <h2 id="texto-exibicao">Texto Dinâmico</h2>
+        </div>
+
+        <script>
+            const campo = document.getElementById("campo-espelho");
+            const textoExibicao = document.getElementById("texto-exibicao");
+            const seletorDecor = document.getElementById("seletor-cor");
+
+            campo.addEventListener("input", (e) => {
+                textoExibicao.textContent = `${e.target.value.length}`;
+                textoExibicao.style.color = seletorDecor.value;
+            });
+
+            // seletorDecor.addEventListener("change", (e) => {
+            //     textoExibicao.style.color = seletorDecor.value;
+            // });
+        </script>
+    </body>
+</html>
